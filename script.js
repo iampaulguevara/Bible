@@ -20,8 +20,6 @@ var verse5 = "<i><sup><b>5</b></sup> The light shines in the darkness, and the d
 
 var scripture = verse1+" "+verse2+" "+verse3+" "+verse4+" "+verse5;
 
-console.log(scripture)
-
 // Inserts the text into the HTML DOM
 window.document.getElementById("book").innerHTML = book;
 window.document.getElementById("scripture").innerHTML = scripture;
@@ -41,11 +39,11 @@ function readTextFile(file)
             {
                 var allText = rawFile.responseText;
                 //alert(allText);
+                return allText;
             }
         }
     }
     rawFile.send(null);
-    return allText;
 }
 
 console.log(readTextFile("John.txt"));
