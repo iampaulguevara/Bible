@@ -26,8 +26,9 @@ console.log(scripture)
 window.document.getElementById("book").innerHTML = book;
 window.document.getElementById("scripture").innerHTML = scripture;
 
+
 // need to create a local server for the browser to access the file
-/*
+
 function readTextFile(file)
 {
     var rawFile = new XMLHttpRequest();
@@ -46,5 +47,4 @@ function readTextFile(file)
     rawFile.send(null);
 }
 
-readTextFile("http://localhost:8000/C://Users/Pablo/Desktop/Bible-Project - Copy/John.txt");
-*/
+readTextFile("John.txt");
