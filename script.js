@@ -39,6 +39,7 @@ function readTextFile(file)
             {
                 var allText = rawFile.responseText;
                 //alert(allText);
+                console.log(allText);
                 return allText;
             }
         }
