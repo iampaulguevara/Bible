@@ -41,7 +41,7 @@ function readTextFile(file)
             {
                 var allText = rawFile.responseText;
                 //alert(allText);
-                text = allText;
+                window.text = allText;
                 console.log(allText);
             }
         }
