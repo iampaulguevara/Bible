@@ -47,4 +47,4 @@ function readTextFile(file)
     rawFile.send(null);
 }
 
-readTextFile("John.txt");
+console.log(readTextFile("John.txt"));
