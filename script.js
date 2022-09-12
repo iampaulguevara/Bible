@@ -27,6 +27,8 @@ window.document.getElementById("scripture").innerHTML = scripture;
 
 // need to create a local server for the browser to access the file
 
+var text;
+
 function readTextFile(file)
 {
     var rawFile = new XMLHttpRequest();
@@ -39,14 +41,14 @@ function readTextFile(file)
             {
                 var allText = rawFile.responseText;
                 //alert(allText);
+                text = allText;
                 console.log(allText);
-                return allText;
             }
         }
     }
     rawFile.send(null);
 }
 
-var text = readTextFile("John.txt")
+readTextFile("John.txt")
 
 console.log(text);
