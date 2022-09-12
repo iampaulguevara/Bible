@@ -42,13 +42,12 @@ function readTextFile(file)
                 var allText = rawFile.responseText;
                 //alert(allText);
                 window.text = allText;
-                console.log(allText);
             }
         }
     }
     rawFile.send(null);
 }
 
-readTextFile("John.txt")
+readTextFile("John.txt");
 
 console.log(text);
