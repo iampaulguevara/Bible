@@ -46,4 +46,6 @@ function readTextFile(file)
     rawFile.send(null);
 }
 
-console.log(readTextFile("John.txt"));
+var text = readTextFile("John.txt")
+
+console.log(text);
