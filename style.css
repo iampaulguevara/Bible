@@ -12,21 +12,6 @@
 
 h1 {
   text-align: center;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  height: 100px;
-}
-
-.col-6 {
-  text-align: justify;
-  font-style: italic;
-  background-color: #F9F8F4;
-  padding: 50px;
-  border: 2px solid black;
-}
-
-.col-3 {
-  background-color: white;
 }
 
 .container-fluid{
@@ -34,25 +19,20 @@ h1 {
   margin: 0px;
 }
 
-#bottom-row{
-  height: 100px;
-}
-
-.container{
-  text-align: justify;
-  font-style: italic;
-  background-color: white;
-}
-
 .row{
-  padding-left: 30%;
-  padding-right: 30%;
   background-color: #F9F8F4;
   padding-top: 70px;
   padding-bottom: 70px;
 }
 
-p{
-  padding: 50px;
-  font-size: 1.3em;
+#main{
+  padding: 40px;
+  font-size: 1em;
+  text-align: justify;
+  font-style: italic;
+  background-color: white;
+}
+
+header{
+  padding: 15px;
 }
