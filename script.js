@@ -40,6 +40,9 @@ function updatePage(){
     var book = inputVal.split(" ")[0];
     var chapter = inputVal.split(" ")[inputVal.split(" ").length-1];
 
+    console.log(book);
+    console.log(chapter);
+
     // updates the main body of the page with the scripture
     readTextFile("Books/"+book+"/"+chapter+".txt");
     window.document.getElementById("scripture").innerHTML = text;
