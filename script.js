@@ -50,7 +50,7 @@ search.addEventListener("keypress",function(event){
         event.preventDefault();
         document.getElementById("search-button").click()
     }
-}
+});
 
 // Inserts the text into the HTML DOM
 //window.document.getElementById("book").innerHTML = book + " " + chapter;
