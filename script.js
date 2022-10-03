@@ -9,19 +9,6 @@
 // Pulls the text content within the HTML as well?
 //console.log(window.document.getElementById("test").textContent);
 
-var search;
-
-function getInputValue(){
-    var inputVal = document.getElementById("search").value;
-    alert(inputVal)
-    window.search = inputVal
-    window.document.getElementById("book").innerHTML = inputVal;
-};
-
-console.log(search);
-
-var book = search.split(" ")[0];
-var chapter = search.split(" ")[1];
 var text;
 
 function readTextFile(file)
@@ -43,9 +30,26 @@ function readTextFile(file)
     rawFile.send(null);
 }
 
-readTextFile("Books/"+book+"/"+chapter+".txt");
+function getInputValue(){
+    var inputVal = document.getElementById("search").value;
+    window.document.getElementById("book").innerHTML = inputVal;
+
+    var book = inputVal.split(" ")[0];
+    var chapter = inputVal.split(" ")[1];
+
+    readTextFile("Books/"+book+"/"+chapter+".txt");
+    window.document.getElementById("scripture").innerHTML = text;
+
+};
+
+console.log(search);
+
+
+
+
+
+
 
 
 // Inserts the text into the HTML DOM
 //window.document.getElementById("book").innerHTML = book + " " + chapter;
-window.document.getElementById("scripture").innerHTML = text;
