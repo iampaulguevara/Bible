@@ -37,11 +37,10 @@ function updatePage(){
     var inputVal = document.getElementById("search").value;
     window.document.getElementById("book").innerHTML = inputVal;
 
+    // need to fix this. this doesn't work when the book name has spaces e.g. "2 Peter"
+    // the book name will be read as "2"
     var book = inputVal.split(" ")[0];
     var chapter = inputVal.split(" ")[inputVal.split(" ").length-1];
-
-    console.log(book);
-    console.log(chapter);
 
     // updates the main body of the page with the scripture
     readTextFile("Books/"+book+"/"+chapter+".txt");
