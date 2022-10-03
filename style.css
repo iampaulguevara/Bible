@@ -36,3 +36,8 @@ h1 {
 header{
   padding: 15px;
 }
+
+.col-12{
+  margin:auto;
+  text-align: center;
+}

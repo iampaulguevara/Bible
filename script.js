@@ -9,8 +9,12 @@
 // Pulls the text content within the HTML as well?
 //console.log(window.document.getElementById("test").textContent);
 
-var book = "John";
-var chapter = 1;
+var search = document.getElementById("Search").value
+
+console.log(search)
+
+var book = search.split(" ")[0];
+var chapter = search.split(" ")[1];
 var text;
 
 function readTextFile(file)
@@ -36,5 +40,5 @@ readTextFile("Books/"+book+"/"+chapter+".txt");
 
 
 // Inserts the text into the HTML DOM
-window.document.getElementById("book").innerHTML = book;
+window.document.getElementById("book").innerHTML = book + " " + chapter;
 window.document.getElementById("scripture").innerHTML = text;
