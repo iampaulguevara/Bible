@@ -11,13 +11,10 @@
 
 var search;
 
-let form = document.querySelector(".search-form");
-form.addEventListener("submit",function(e){
-    e.preventDefault()
-    let formdata = new FormData(this);
-    let input = formdata.get("search-input")
-    window.search = input
-});
+function getInputValue(){
+    let inputVal = document.getElementById("search");
+    window.search = inputVal
+};
 
 console.log(search);
 
