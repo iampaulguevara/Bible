@@ -9,7 +9,15 @@
 // Pulls the text content within the HTML as well?
 //console.log(window.document.getElementById("test").textContent);
 
-var search = document.getElementById("Search").value
+var search;
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit",function(e)){
+    e.preventDefault()
+    let formdata = new FormData(this);
+    let input = formdata.get("search-input")
+    window.search = input
+}
 
 console.log(search)
 
