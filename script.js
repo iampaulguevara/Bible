@@ -22,7 +22,6 @@ function readTextFile(file)
             if(rawFile.status === 200 || rawFile.status == 0)
             {
                 var allText = rawFile.responseText;
-                //alert(allText);
                 window.text = allText;
             }
         }
@@ -30,6 +29,9 @@ function readTextFile(file)
     rawFile.send(null);
 }
 
+
+// need to rename this function - it's the update to the page
+// need to make the page also update on enter keypress (not just button click)
 function getInputValue(){
     var inputVal = document.getElementById("search").value;
     window.document.getElementById("book").innerHTML = inputVal;
@@ -42,14 +44,13 @@ function getInputValue(){
 
 };
 
-console.log(search);
-
-
-
-
-
-
-
+var search = document.getElementById("search");
+search.addEventListener("keypress",function(event){
+    if (event.key === "Enter") {
+        event.preventDefault();
+        document.getElementById("search-button").click()
+    }
+}
 
 // Inserts the text into the HTML DOM
 //window.document.getElementById("book").innerHTML = book + " " + chapter;
