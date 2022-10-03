@@ -12,14 +12,14 @@
 var search;
 
 let form = document.querySelector("#search-form");
-form.addEventListener("submit",function(e)){
+form.addEventListener("submit",function(e){
     e.preventDefault()
     let formdata = new FormData(this);
     let input = formdata.get("search-input")
     window.search = input
-}
+});
 
-console.log(search)
+console.log(search);
 
 var book = search.split(" ")[0];
 var chapter = search.split(" ")[1];
