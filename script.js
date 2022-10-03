@@ -12,7 +12,8 @@
 var search;
 
 function getInputValue(){
-    let inputVal = document.getElementById("search");
+    var inputVal = document.getElementById("search").value;
+    alert(inputVal)
     window.search = inputVal
 };
 
