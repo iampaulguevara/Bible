@@ -15,6 +15,7 @@ function getInputValue(){
     var inputVal = document.getElementById("search").value;
     alert(inputVal)
     window.search = inputVal
+    window.document.getElementById("book").innerHTML = book + " " + chapter;
 };
 
 console.log(search);
