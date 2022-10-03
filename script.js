@@ -15,7 +15,7 @@ function getInputValue(){
     var inputVal = document.getElementById("search").value;
     alert(inputVal)
     window.search = inputVal
-    window.document.getElementById("book").innerHTML = book + " " + chapter;
+    window.document.getElementById("book").innerHTML = inputVal;
 };
 
 console.log(search);
@@ -47,5 +47,5 @@ readTextFile("Books/"+book+"/"+chapter+".txt");
 
 
 // Inserts the text into the HTML DOM
-window.document.getElementById("book").innerHTML = book + " " + chapter;
+//window.document.getElementById("book").innerHTML = book + " " + chapter;
 window.document.getElementById("scripture").innerHTML = text;
