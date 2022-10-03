@@ -32,7 +32,7 @@ function readTextFile(file)
     rawFile.send(null);
 }
 
-readTextFile("Books/John/1.txt");
+readTextFile("Books/"+book+"/"+chapter+".txt");
 
 
 // Inserts the text into the HTML DOM
