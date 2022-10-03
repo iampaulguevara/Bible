@@ -11,7 +11,7 @@
 
 var search;
 
-let form = document.querySelector("#search-form");
+let form = document.querySelector(".search-form");
 form.addEventListener("submit",function(e){
     e.preventDefault()
     let formdata = new FormData(this);
