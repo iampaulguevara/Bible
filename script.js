@@ -20,7 +20,7 @@ function format_verse(unformatted_verse){
 
     for (let i = 0; i < test_str_array.length; i++){
         if(test_str_array[i]==verseCounter){
-            formatted_verse+= "<sup><b>"+test_str_array[i]+"</b></sup> "
+            formatted_verse+= "<sup>"+test_str_array[i]+"</sup> "
             verseCounter+=1
         }
         else{
