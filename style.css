@@ -28,7 +28,7 @@ h1 {
 #main{
   padding: 40px;
   font-size: 1em;
-  text-align: justify;
+  text-align: left;
   font-style: italic;
   background-color: white;
 }
