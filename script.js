@@ -11,7 +11,8 @@
 // window.document.getElementById("scripture").innerHTML = text;
 
 
-// adds HTML superscript and bold tags on the verse numbers
+// adds HTML superscript and bold tags on the verse numbers. NOTE - if the text contains a number which happens to align with
+// the verse number, this function will not properly format the passage. (are there instances of this..?)
 // semicolons?
 function format_verse(unformatted_verse){
     const test_str_array = unformatted_verse.split(" ")
