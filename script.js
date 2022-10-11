@@ -10,6 +10,29 @@
 // Inserts the text into the HTML DOM
 // window.document.getElementById("scripture").innerHTML = text;
 
+
+// adds HTML superscript and bold tags on the verse numbers
+// semicolons?
+function format_verse(unformatted_verse){
+    const test_str_array = unformatted_verse.split(" ")
+    var formatted_verse = ""
+    verseCounter = 1
+
+    for (let i = 0; i < test_str_array.length; i++){
+        if(test_str_array[i]==verseCounter){
+            formatted_verse+= "<sup><b>"+test_str_array[i]+"</b></sup> "
+            verseCounter+=1
+        }
+        else{
+            formatted_verse+=test_str_array[i]+" "
+        }
+    }
+
+    // removes the extra space at the end
+    return formatted_verse.slice(0,formatted_verse.length-1); 
+};
+
+
 var rand = Math.random();
 var rand2 = Math.random();
 var gospelOfTheDay;
@@ -61,7 +84,7 @@ function readTextFile(file)
 
 // randomly generated Gospel of the Day (actually changes after each refresh) - before any searches/updates are requested
 readTextFile("Books/"+gospelOfTheDay+"/"+chapterOfTheDay+".txt");
-window.document.getElementById("scripture").innerHTML = text;
+window.document.getElementById("scripture").innerHTML = format_verse(text);
 
 
 // updates the page when the user clicks on the search button
@@ -77,7 +100,7 @@ function updatePage(){
 
     // updates the main body of the page with the scripture
     readTextFile("Books/"+book+"/"+chapter+".txt");
-    window.document.getElementById("scripture").innerHTML = text;
+    window.document.getElementById("scripture").innerHTML = format_verse(text);
 };
 
 var search = document.getElementById("search");
