@@ -41,3 +41,9 @@ header{
   margin:auto;
   text-align: center;
 }
+
+footer{
+  font-style: italic;
+  text-align: center;
+  padding: 50px;
+}
