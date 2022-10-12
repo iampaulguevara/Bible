@@ -10,6 +10,10 @@
 // Inserts the text into the HTML DOM
 // window.document.getElementById("scripture").innerHTML = text;
 
+// testing line breaks between paragraphs
+//var test_json = '{"John":{"21":[4,9,15,20,24]}}'
+//var mydata = JSON.parse(test_json);
+//console.log(mydata["John"]["21"]);
 
 // adds HTML superscript and bold tags on the verse numbers. NOTE - if the text contains a number which happens to align with
 // the verse number, this function will not properly format the passage. (are there instances of this..?)
@@ -20,6 +24,9 @@ function format_verse(unformatted_verse){
     verseCounter = 1
 
     for (let i = 0; i < test_str_array.length; i++){
+        if(window.mydata["John"]["21"].includes(parseInt(test_str_array[i]))){
+            formatted_verse+="<br> "
+        }
         if(test_str_array[i]==verseCounter){
             formatted_verse+= "<sup>"+test_str_array[i]+"</sup> "
             verseCounter+=1
@@ -39,25 +46,27 @@ var rand2 = Math.random();
 var gospelOfTheDay;
 var chapterOfTheDay;
 
+// e.g. for Matthew the argument to Math.round() will vary from 0.5 to 28.5
+// this gives an equal probability for any chapter to be selected. ([0.5, 1.5) -> 1, [1.5, 2.5) -> 2, etc.)
 if(rand < 0.25){
     // 28 books
     gospelOfTheDay = "Matthew"
-    chapterOfTheDay = Math.round(rand2*27+1)
+    chapterOfTheDay = Math.round(rand2*28+0.5)
 }
 else if(rand < 0.5){
     // 16 books
     gospelOfTheDay = "Mark"
-    chapterOfTheDay = Math.round(rand2*15+1)
+    chapterOfTheDay = Math.round(rand2*16+0.5)
 }
 else if(rand < 0.75){
     // 24 books
     gospelOfTheDay = "Luke"
-    chapterOfTheDay = Math.round(rand2*23+1)
+    chapterOfTheDay = Math.round(rand2*24+0.5)
 }
 else{
     // 21 books
     gospelOfTheDay = "John"
-    chapterOfTheDay = Math.round(rand2*20+1)
+    chapterOfTheDay = Math.round(rand2*21+0.5)
 };
 
 window.document.getElementById("book").innerHTML = gospelOfTheDay + " " + chapterOfTheDay;
@@ -81,6 +90,11 @@ function readTextFile(file)
     }
     rawFile.send(null);
 };
+
+
+// testing linebreaks between paragraphs
+//var test_script = "1 After these things Jesus manifested himself again to the disciples at the sea of Tiberias; and he manifested `himself' on this wise. 2 There was together Simon Peter, and Thomas called Didymus, and Nathanael of Cana in Galilee, and the `sons' of Zebedee, and two other of his disciples. 3 Simon Peter saith unto them, I go a fishing. They say unto him, We also come with thee. They went forth, and entered into the boat; and that night they took nothing. 4 But when day was now breaking, Jesus stood on the beach: yet the disciples knew not that it was Jesus. 5 Jesus therefore saith unto them, Children, have ye aught to eat? They answered him, No.";
+//window.document.getElementById("scripture").innerHTML = format_verse(test_script);
 
 
 // randomly generated Gospel of the Day (actually changes after each refresh) - before any searches/updates are requested
