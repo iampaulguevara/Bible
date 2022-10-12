@@ -1,12 +1,12 @@
 
-  .paragraph {
-    display:inline-block;
-    border:2px solid #ffefd0;
-    background:#F9F8F4;
-    padding:40px;
-    text-align: justify;
-    margin-left: 30%;
-    margin-right: 30%;
+.paragraph {
+  display:inline-block;
+  border:2px solid #ffefd0;
+  background:#F9F8F4;
+  padding:40px;
+  text-align: justify;
+  margin-left: 30%;
+  margin-right: 30%;
 
 }
 
@@ -28,7 +28,7 @@ h1 {
 #main{
   padding: 40px;
   font-size: 1em;
-  text-align: left;
+  text-align: justify;
   font-style: italic;
   background-color: white;
 }

@@ -18,7 +18,7 @@ var breaks_json = JSON.parse(breaks);
 // semicolons?
 function format_verse(unformatted_verse){
     const test_str_array = unformatted_verse.split(" ")
-    var formatted_verse = ""
+    var formatted_verse = "&nbsp;&nbsp;"
     verseCounter = 1
 
     for (let i = 0; i < test_str_array.length; i++){
