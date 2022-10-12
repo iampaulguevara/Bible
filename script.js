@@ -24,9 +24,9 @@ function format_verse(unformatted_verse){
     verseCounter = 1
 
     for (let i = 0; i < test_str_array.length; i++){
-        if(window.mydata["John"]["21"].includes(parseInt(test_str_array[i]))){
-            formatted_verse+="<br> "
-        }
+        //if(window.mydata["John"]["21"].includes(parseInt(test_str_array[i]))){
+        //    formatted_verse+="<br> "
+        //}
         if(test_str_array[i]==verseCounter){
             formatted_verse+= "<sup>"+test_str_array[i]+"</sup> "
             verseCounter+=1
