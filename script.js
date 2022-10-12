@@ -24,7 +24,7 @@ function format_verse(unformatted_verse){
     for (let i = 0; i < test_str_array.length; i++){
         if(window.gospelOfTheDay=="John"){ // if statement to be removed once breaks.json is completed for all Gospels...also need to apply this when page is searched - not just on Gospel of the Day
             if(window.breaks_json[0][window.gospelOfTheDay][window.chapterOfTheDay.toString()].includes(parseInt(test_str_array[i]))){
-                formatted_verse+="<br> "
+                formatted_verse+='<br><span class="indent"></span> '
             }
         }
         if(test_str_array[i]==verseCounter){
