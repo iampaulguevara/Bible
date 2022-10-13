@@ -15,15 +15,15 @@ var breaks_json = JSON.parse(breaks);
 
 // adds HTML superscript and bold tags on the verse numbers. NOTE - if the text contains a number which happens to align with
 // the verse number, this function will not properly format the passage. (are there instances of this..?)
-// semicolons?
+// this needs to be fixed. when a book/chapter is searched, it will get formatted according to the Gospel of the Day
 function format_verse(unformatted_verse){
     const test_str_array = unformatted_verse.split(" ")
     var formatted_verse = "&nbsp;&nbsp;"
     verseCounter = 1
 
     for (let i = 0; i < test_str_array.length; i++){
-        if(window.gospelOfTheDay=="John"){ // if statement to be removed once breaks.json is completed for all Gospels...also need to apply this when page is searched - not just on Gospel of the Day
-            if(window.breaks_json[0][window.gospelOfTheDay][window.chapterOfTheDay.toString()].includes(parseInt(test_str_array[i]))){
+        if(["Mark","John"].includes(window.gospelOfTheDay)){ // if statement to be removed once breaks.json is completed for all Gospels...also need to apply this when page is searched - not just on Gospel of the Day
+            if(window.breaks_json[window.gospelOfTheDay][window.chapterOfTheDay.toString()].includes(parseInt(test_str_array[i]))){
                 formatted_verse+='<br>&nbsp;&nbsp; '
             }
         }
