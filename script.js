@@ -13,17 +13,19 @@
 // testing line breaks between paragraphs
 var breaks_json = JSON.parse(breaks);
 
+console.log(breaks)
+
 // adds HTML superscript and bold tags on the verse numbers. NOTE - if the text contains a number which happens to align with
 // the verse number, this function will not properly format the passage. (are there instances of this..?)
 // this needs to be fixed. when a book/chapter is searched, it will get formatted according to the Gospel of the Day
-function format_verse(unformatted_verse){
+function format_verse(unformatted_verse,gospel=false){
     const test_str_array = unformatted_verse.split(" ")
     var formatted_verse = "&nbsp;&nbsp;"
     verseCounter = 1
 
     for (let i = 0; i < test_str_array.length; i++){
-        if(["Mark","John"].includes(window.gospelOfTheDay)){ // if statement to be removed once breaks.json is completed for all Gospels...also need to apply this when page is searched - not just on Gospel of the Day
-            if(window.breaks_json[0][window.gospelOfTheDay][window.chapterOfTheDay.toString()].includes(parseInt(test_str_array[i]))){
+        if(["Mark","John"].includes(window.gospelOfTheDay) && gospel==true){ // if statement to be removed once breaks.json is completed for all Gospels...also need to apply this when page is searched - not just on Gospel of the Day
+            if(window.breaks_json[window.gospelOfTheDay][window.chapterOfTheDay.toString()].includes(parseInt(test_str_array[i]))){
                 formatted_verse+='<br>&nbsp;&nbsp; '
             }
         }
@@ -39,7 +41,6 @@ function format_verse(unformatted_verse){
     // removes the extra space at the end
     return formatted_verse.slice(0,formatted_verse.length-1); 
 };
-
 
 var rand = Math.random();
 var rand2 = Math.random();
@@ -99,7 +100,7 @@ function readTextFile(file)
 
 // randomly generated Gospel of the Day (actually changes after each refresh) - before any searches/updates are requested
 readTextFile("Books/"+gospelOfTheDay+"/"+chapterOfTheDay+".txt");
-window.document.getElementById("scripture").innerHTML = format_verse(text);
+window.document.getElementById("scripture").innerHTML = format_verse(text,true);
 
 
 // updates the page when the user clicks on the search button
